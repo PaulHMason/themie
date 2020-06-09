@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themie Demo</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            background: var(--theme-window-color);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 110px;
+            margin: 8px;
+            font-size: 13px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        .primary {
+            color: var(--theme-on-primary-color);
+            background: var(--theme-primary-color);
+        }
+
+        .light-primary {
+            color: var(--theme-on-light-primary-color);
+            background: var(--theme-light-primary-color);
+        }
+
+        .dark-primary {
+            color: var(--theme-on-dark-primary-color);
+            background: var(--theme-dark-primary-color);
+        }
+
+        .secondary {
+            color: var(--theme-on-secondary-color);
+            background: var(--theme-secondary-color);
+        }
+
+        .light-secondary {
+            color: var(--theme-on-light-secondary-color);
+            background: var(--theme-light-secondary-color);
+        }
+
+        .dark-secondary {
+            color: var(--theme-on-dark-secondary-color);
+            background: var(--theme-dark-secondary-color);
+        }
+
+        .surface {
+            color: var(--theme-on-surface-color);
+            background: var(--theme-surface-color);
+        }
+
+        .background {
+            color: var(--theme-on-background-color);
+            background: var(--theme-background-color);
+        }
+
+        .error {
+            color: var(--theme-on-error-color);
+            background: var(--theme-error-color);
+        }
+
+        .notification {
+            color: var(--theme-on-notification-color);
+            background: var(--theme-notification-color);
+        }
+
+        .divider {
+            color: var(--theme-divider-color);
+            background: var(--theme-surface-color);
+        }
+
+        .text-primary {
+            color: var(--theme-text-primary-color);
+            background: var(--theme-surface-color);
+        }
+
+        .text-secondary {
+            color: var(--theme-text-secondary-color);
+            background: var(--theme-surface-color);
+        }
+
+        .text-disabled {
+            color: var(--theme-text-disabled-color);
+            background: var(--theme-surface-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="blue-teal" class="container">
+        <div class="item primary">primary</div>
+        <div class="item light-primary">light-primary</div>
+        <div class="item dark-primary">dark-primary</div>
+
+        <div class="item secondary">secondary</div>
+        <div class="item light-secondary">light-secondary</div>
+        <div class="item dark-secondary">dark-secondary</div>
+
+        <div class="item surface">surface</div>
+        <div class="item background">background</div>
+        <div class="item error">error</div>
+        <div class="item notification">notification</div>
+        <div class="item divider">divider</div>
+
+        <div class="item text-primary">text-primary</div>
+        <div class="item text-secondary">text-secondary</div>
+        <div class="item text-disabled">text-disabled</div>
+    </div>
+
+    <div id="dark-orange" class="container">
+        <div class="item primary">primary</div>
+        <div class="item light-primary">light-primary</div>
+        <div class="item dark-primary">dark-primary</div>
+
+        <div class="item secondary">secondary</div>
+        <div class="item light-secondary">light-secondary</div>
+        <div class="item dark-secondary">dark-secondary</div>
+
+        <div class="item surface">surface</div>
+        <div class="item background">background</div>
+        <div class="item error">error</div>
+        <div class="item notification">notification</div>
+        <div class="item divider">divider</div>
+
+        <div class="item text-primary">text-primary</div>
+        <div class="item text-secondary">text-secondary</div>
+        <div class="item text-disabled">text-disabled</div>
+    </div>
+
+    <script type="module">
+        import { themie, Theme } from '../themie.js';
+        import { blueTeal, darkOrange } from '../themes.js';
+
+        themie.register('blue-teal', blueTeal);
+        themie.register('dark-orange', darkOrange);
+
+        const containers = document.querySelectorAll('.container');
+
+        containers.forEach((el) => {
+            themie.apply(el.id, el);
+        });
+
+        //themie.apply('dark-orange');
+        //themie.apply('blue-teal');
+    </script>
+</body>
+
+</html>

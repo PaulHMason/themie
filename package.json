@@ -1,0 +1,28 @@
+{
+  "name": "themie",
+  "version": "0.0.1",
+  "description": "A CSS variable theming library",
+  "main": "themie.js",
+  "module": "themie.js",
+  "scripts": {
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
+    "deploy": "npm publish",
+    "testdeploy": "npm publish --dry-run"
+  },
+  "devDependencies": {
+    "es-dev-server": "^1.23.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulHMason/themie.git"
+  },
+  "author": "Paul H Mason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PaulHMason/themie/issues"
+  },
+  "homepage": "https://github.com/PaulHMason/themie#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
