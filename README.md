@@ -1,21 +1,21 @@
 Themie is a CSS variable theming library that can be used to easily create [Material Design](https://material.io/design/color/the-color-system.html#color-usage-and-palettes) themes for web applications.
 
-# Quick Start
+### Quick Start
 
-## 1) Install
+#### 1) Install
 Install Themie from NPM:
 
 ```
 npm i themie --save
 ```
 
-## 2) Import Themie
+#### 2) Import Themie
 
 ```javascript
 import { themie, Theme } from 'themie/themie.js';
 ```
 
-## 3) Create a Theme
+#### 3) Create a Theme
 
 ```javascript
 /*
@@ -34,13 +34,13 @@ const blueTeal = new Theme('#6002ee', '#9c47ff', '#0000ba', '#00bfa5', '#5df2d6'
                            'rgba(0, 0, 0, 0.20)');
 ```
 
-## 4) Register the Theme
+#### 4) Register the Theme
 
 ```javascript
 themie.register('blue-teal', blueTeal);
 ```
 
-## 5) Apply the Theme
+#### 5) Apply the Theme
 
 A theme can be applied globally (to the document).
 
@@ -56,7 +56,7 @@ const el = document.getElementById('something');
 themie.apply('blue-teal', el);
 ```
 
-## 6) Use the Theme
+#### 6) Use the Theme
 
 Since a theme is just a bunch of CSS variables, you use them in CSS selectors as normal.
 
@@ -70,7 +70,7 @@ Since a theme is just a bunch of CSS variables, you use them in CSS selectors as
 
 Different themes can be applied to different nodes, and a theme applied to a child node will override any inherited theme.
 
-# Theme Variables
+### Theme Variables
 
 |Item            |Variable                        |Description                                                              |
 |----------------|--------------------------------|-------------------------------------------------------------------------|
@@ -99,7 +99,7 @@ Different themes can be applied to different nodes, and a theme applied to a chi
 |textDisabled    |--theme-text-disabled-color     |The color of disabled text on (usually) surface backgrounds              |
 |divider         |--theme-divider-color           |The color of dividers on (usually) surface backgrounds                   |
 
-# Predefined Themes
+### Predefined Themes
 
 There's a couple of predefined themes in the `themes.js` modules. To use theme just import the theme(s) you want and register them (you can use whatever name you want to register the predefined themes).
 
@@ -117,5 +117,5 @@ These are the currently available predefined themes.
 
 |Theme     |Description                                                |
 |----------|-----------------------------------------------------------|
-|blueTeal  |A light themen with blue primary and teal secondary colors |
+|blueTeal  |A light theme with blue primary and teal secondary colors |
 |darkOrange|A dark theme with brown primary and orange secondary colors|
