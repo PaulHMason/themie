@@ -1,6 +1,6 @@
 {
   "name": "themie",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A CSS variable theming library",
   "main": "themie.js",
   "module": "themie.js",
