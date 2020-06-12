@@ -5,8 +5,8 @@
   "main": "themie.js",
   "module": "themie.js",
   "scripts": {
-    "publish": "npm publish",
-    "test-publish": "npm publish --dry-run"
+    "deploy": "npm publish",
+    "test-deploy": "npm publish --dry-run"
   },
   "repository": {
     "type": "git",
