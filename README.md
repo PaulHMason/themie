@@ -12,7 +12,8 @@ npm i themie --save
 #### 2) Import Themie
 
 ```javascript
-import { themie, Theme } from 'themie/themie.js';
+import { themie } from 'themie/themie.js';
+import { MaterialTheme } from 'themie/material-theme.js';
 ```
 
 #### 3) Create a Theme
@@ -26,7 +27,7 @@ onSurface, onBackground, onError, onNotification,
 textPrimary, textSecondary, textDisabled, 
 divider
 */
-const blueTeal = new Theme('#6002ee', '#9c47ff', '#0000ba', '#00bfa5', '#5df2d6', '#008e76', 
+const blueTeal = new MaterialTheme('#6002ee', '#9c47ff', '#0000ba', '#00bfa5', '#5df2d6', '#008e76', 
                            '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#FFFFFF',
                            '#FFFFFF', '#FAFAFA', '#B00020', '#323232', 
                            'rgba(0, 0, 0, 0.87)', 'rgba(0, 0, 0, 0.87)', '#FFFFFF', 'rgba(255, 255, 255, 0.87)',
@@ -70,9 +71,46 @@ Since a theme is just a bunch of CSS variables, you use them in CSS selectors as
 
 Different themes can be applied to different nodes, and a theme applied to a child node will override any inherited theme.
 
-### Theme Variables
+### Themes
 
-|Item            |Variable                        |Description                                                              |
+Themie currently supports Material Design themes only, but any object can be used to register a theme. The generated CSS variable names are based on the camelCase property names, which are converted to snake-case with a `--theme-` prefix and `-color` suffix. For example, you could do something like this:
+
+```javascript
+import { themie } from 'themie/themie.js';
+
+const customTheme = {
+    main: 'cornflowerblue',
+    accent: 'lightgreen',
+    text: 'black'
+}
+
+themie.register('custom-theme', customTheme);
+themie.apply('custom-theme');
+```
+
+And use the theme like this:
+
+```css
+.main {
+    color: var(--theme-text-color);
+    background: var(--theme-main-color);
+}
+
+.accent {
+    color: var(--theme-text-color);
+    background: var(--theme-accent-color);
+}
+```
+
+#### Material Theme Variables
+
+To use the Material Design theme object, import `MaterialTheme` from `material-theme.js`. The constructor parameters are shown in the table below.
+
+```javascript
+import { MaterialTheme } from 'themie/material-theme.js';
+```
+
+|Parameter       |Variable                        |Description                                                              |
 |----------------|--------------------------------|-------------------------------------------------------------------------|
 |primary         |--theme-primary-color           |The primary color                                                        |
 |lightPrimary    |--theme-light-primary-color     |A light variant of the primary color                                     |
@@ -115,7 +153,9 @@ themie.apply('blue-teal');
 
 These are the currently available predefined themes.
 
-|Theme     |Description                                                |
-|----------|-----------------------------------------------------------|
-|blueTeal  |A light theme with blue primary and teal secondary colors |
-|darkOrange|A dark theme with brown primary and orange secondary colors|
+|Theme     |Type           |Description                                                |
+|----------|---------------|-----------------------------------------------------------|
+|blueTeal  |Material Design|A light theme with blue primary and teal secondary colors  |
+|darkOrange|Material Design|A dark theme with brown primary and orange secondary colors|
+
+*These predefined themes are still a work in progress.*

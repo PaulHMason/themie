@@ -1,16 +1,12 @@
 {
   "name": "themie",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A CSS variable theming library",
   "main": "themie.js",
   "module": "themie.js",
   "scripts": {
-    "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
-    "deploy": "npm publish",
-    "testdeploy": "npm publish --dry-run"
-  },
-  "devDependencies": {
-    "es-dev-server": "^1.23.0"
+    "publish": "npm publish",
+    "test-publish": "npm publish --dry-run"
   },
   "repository": {
     "type": "git",

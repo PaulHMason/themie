@@ -1,40 +1,27 @@
-class Theme {
-    constructor(primary, lightPrimary, darkPrimary, secondary, lightSecondary, darkSecondary,
-                onPrimary, onLightPrimary, onDarkPrimary, onSecondary, onLightSecondary, onDarkSecondary,
-                surface, background, error, notification, onSurface, onBackground, onError, onNotification,
-                textPrimary, textSecondary, textDisabled, divider) {
-    
-        this.primary = primary;
-        this.lightPrimary = lightPrimary;
-        this.darkPrimary = darkPrimary;
-        this.secondary = secondary;
-        this.lightSecondary = lightSecondary;
-        this.darkSecondary = darkSecondary;
+/**
+@license
+MIT License
 
-        this.onPrimary = onPrimary;
-        this.onLightPrimary = onLightPrimary;
-        this.onDarkPrimary = onDarkPrimary;
-        this.onSecondary = onSecondary;
-        this.onLightSecondary = onLightSecondary;
-        this.onDarkSecondary = onDarkSecondary;
+Copyright (c) 2020 Paul Mason
 
-        this.surface = surface;
-        this.background = background;
-        this.error = error;
-        this.notification = notification;
-        this.onSurface = onSurface;
-        this.onBackground = onBackground;
-        this.onError = onError;
-        this.onNotification = onNotification;
-        
-        this.textPrimary = textPrimary;
-        this.textSecondary = textSecondary;
-        this.textDisabled = textDisabled;
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-        this.divider = divider;
-    }
-}
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 class Themie {
     constructor() {
         this._themes = new Map();
@@ -79,4 +66,4 @@ class Themie {
 window._themie = window._themie || new Themie();
 const themie = window._themie;
 
-export { themie, Theme }
+export { themie }
